@@ -1,0 +1,101 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<link
+	href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css"
+	rel="stylesheet" id="bootstrap-css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+ <link rel="stylesheet"  th:href="@{/css/logger-form-page.css}"/>
+
+
+
+<script type="text/javascript"
+	src="/javascript/logger.formValidation.js"></script>
+
+
+
+</head>
+
+<body>
+
+
+
+
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#" style="color: yellow">Service
+					Employee</a>
+			</div>
+
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="/employee/homerelatednews">Home</a></li>
+
+
+				<li class="dropdown"><a class="dropdown-toggle"
+					data-toggle="dropdown" href="#">Employeement Details<span
+						class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="/employee/list">EmployeeList</a></li>
+
+					</ul></li>
+			</ul>
+
+			<ul class="nav navbar-right">
+				<li class="dropdown"><a class="dropdown-toggle"
+					data-toggle="dropdown" href="#">Logger Details<span
+						class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="/logging/list">LoggingsList</a></li>
+					</ul>
+			</ul>
+
+		</div>
+	</nav>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<h3>Logger Form Page</h3>
+
+
+				<form th:action="@{/logging/showFormForSave}" th:object="${loggers}"
+					method="POST">
+					<input type="hidden" th:field="*{id}" placeholder="Enter_Id" />
+
+					<div class="form-group">
+						<label>UserName:</label> <input type="text"
+							th:field="*{user_name}" placeholder="Enter_Username"
+							id="user_name" class="form-control md-4 col-4" />
+						
+					</div>
+
+					<div class="form-group">
+						<label>Password:</label> <input type="password"
+							th:field="*{password}" placeholder="Enter_Password" id="Password"
+							class="form-control md-4 col-4" />
+					</div>
+
+					<div class="form-group">
+						<label>CreatedDate:</label> <input type="date"
+							th:field="*{created_date}" placeholder="Created_Date" id="Date"
+							class="form-control md-4 col-4" />
+					</div>
+					
+					<button onclick="return myFunction()" type="submit"
+						class="btn btn-info col-2">Sign In</button>
+				</form>
+				<br> <a th:href="@{/logging/list}">Go Back to Loggerlist</a>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
