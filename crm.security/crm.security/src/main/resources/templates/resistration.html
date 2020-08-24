@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<link
+	href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css"
+	rel="stylesheet" id="bootstrap-css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+	<header th:insert="common/navbar.html"> </header>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<h3>Registration Form Page</h3>
+				<form th:action="@{/saveResistration}"
+					th:object="${resistrationlist}" method="POST">
+					<input type="hidden" th:field="*{user_id}" >
+
+
+					<div class="form-group">
+						<label>UserName:</label> <input type="text" th:field="*{username}"
+							placeholder="UserName:" id="UserName:"
+							class="form-control md-4 col-4"> <span id="User_Name:"></span>
+					</div>
+
+
+
+
+
+					<div class="form-group">
+						<label>Password:</label> <input type="password"
+							th:field="*{password}" Placeholder="Password:" id="Password:"
+							class="form-control md-4 col-4"> <span id="Pass_word:"></span>
+					</div>
+
+
+					<div class="form-group">
+						<label>Fullname:</label> <input type="text" th:field="*{fullname}"
+							placeholder="Fullname:" id="Fullname"
+							class="form-control md-4 col-4"> <span id="Full_name"></span>
+					</div>
+
+					<div class="form-group">
+						<label>Enabled:</label> <input type="text" th:field="*{enabled}"
+							Placeholder="enabled" id="Password:"
+							class="form-control md-4 col-4"> <span id="enab_led"></span>
+					</div>
+
+					<button type="submit" class="btn btn-info col-2">save</button>
+
+				</form>
+
+
+
+			</div>
+		</div>
+	</div>
+</body>
+</html>

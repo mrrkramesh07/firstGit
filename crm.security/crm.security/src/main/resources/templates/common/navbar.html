@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+<meta charset="UTF-8" />
+
+</head>
+
+<body>
+
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+
+
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#" style="color: yellow">Service
+					Employee</a>
+			</div>
+
+			<ul class="nav navbar-nav">
+				<li class="active"><a th:href="@{/}">Home</a></li>
+
+
+
+
+				<li class="active"><a th:href="@{/aboutus}">About US</a></li>
+
+				<li class="active" sec:authorize="hasAnyAuthority('USER','ADMIN')"><a
+					th:href="@{/user/dashboard}">DashBoard</a></li>
+
+				<li class="active" sec:authorize="hasAuthority('ADMIN')"><a
+					th:href="@{/user/manage}">Manage</a></li>
+			</ul>
+
+
+
+
+
+			<ul class="nav navbar-nav navbar-right">
+				<li sec:authorize="isAuthenticated()" style="color: white">Welcome:
+					<!-- <span style="color: white" sec:authentication="name"></span> -->
+					<span th:text="${#authentication.getPrincipal().getFullname()}"></span>
+					
+				</li>
+
+				<li sec:authorize="isAuthenticated()"><a href="/logout"><span
+						class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+
+
+				<li sec:authorize="!isAuthenticated()"><a
+					href="/showResistration"><span class="glyphicon glyphicon-user"></span>
+						Sign Up</a></li>
+
+				<li sec:authorize="!isAuthenticated()"><a href="/login"><span
+						class="glyphicon glyphicon-log-in"></span> Login</a></li>
+
+			</ul>
+
+		</div>
+	</nav>
+</body>
+</html>

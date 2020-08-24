@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<link
+	href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css"
+	rel="stylesheet" id="bootstrap-css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
+
+</head>
+
+<body>
+
+
+    <header th:insert="common/navbar.html"> </header>
+    <h1 th:text="${userIds}"></h1>
+   
+    <div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="table-responsive">
+					<h1>welcome to home </h1>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	</body>
+	</html>
