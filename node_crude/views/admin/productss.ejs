@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+	<br>
+<div class="container">
+	<a href="/admin/addProduct" class="btn btn-primary btn-sm md-3">Add product</a>
+</div>
+<br>
+
+     <div class="container">
+	<div class="row">
+			<div class="col-md-12">
+				<div class="table responsive">
+					<table class="table table-bordered table-striped">
+						<thead>
+					<tr>
+						<th>Id</th>
+						<th>name</th>
+						<th>Action</th>
+						</tr>
+						</thead>
+				
+					
+						<% for (let product of prods) { %>
+							
+					<tr>
+					
+					<td><%=product.id%></td> 
+						
+					<td><%= product.name %></td>
+
+					<td>
+						<a href="/admin/edit/<%=product.id%>" class="btn btn-info btn-sm">Update</a>
+						
+						<a href="/admin/delete/<%=product.id%>" class="btn btn-danger btn-sm">Delete</a>
+						
+					
+						<!-- <form action="/admin/delete" method="POST">
+							<button class="btn btn-danger btn-sm">Delete</button>
+						</form> -->
+					
+					</td>			
+ <% } %>
+				</tr>
+			
+					</table>
+				</div>
+			</div>
+		</div>
+		</div>
+		</body>
+</html> 
+
+
+    

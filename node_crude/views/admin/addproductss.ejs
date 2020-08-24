@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h3>product Form Page</h3>
+<form  action="/admin/addSaveProduct"  method="POST">
+<input type="hidden" name="id" placeholder="Enter_Id">
+                
+     <div class="form-group">
+        <label>Name:</label> 
+        <input type="text" name="name" placeholder="Name" id="name" class="form-control md-4 col-4">
+        <span id="Firstname_message"></span>
+         </div> 
+        
+                <button type="submit" class="btn btn-info col-2">save</button>
+
+            </form>
+            
+    <br>
+            <p><a href="/admin/list ">Go Back to List </a></p>
+        </div>
+    </div>
+</div>
+</body>
+</html>
